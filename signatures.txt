@@ -1,0 +1,50 @@
+#light
+
+
+
+
+
+namespace ImageLibrary
+  module Operations = begin
+    val average : L:(int * int * int) list -> (int * int * int) list
+    val getImage : I:(int * int * int) list list -> (int * int * int) list list
+    val Grayscale :
+      width:int ->
+        height:int ->
+          depth:int ->
+            image:(int * int * int) list list -> (int * int * int) list list
+    val check : value:'a -> T:'a -> D:int -> int when 'a : comparison
+    val thresh :
+      L:('a * 'a * 'a) list -> T:'a -> D:int -> (int * int * int) list
+        when 'a : comparison
+    val adjustImage :
+      I:('a * 'a * 'a) list list -> T:'a -> D:int -> (int * int * int) list list
+        when 'a : comparison
+    val Threshold :
+      width:int ->
+        height:int ->
+          depth:int ->
+            image:(int * int * int) list list ->
+              threshold:int -> (int * int * int) list list
+    val getRevImg : I:'a list list -> 'a list list
+    val FlipHorizontal :
+      width:int ->
+        height:int ->
+          depth:int ->
+            image:(int * int * int) list list -> (int * int * int) list list
+    val zoomList : L:'a list -> F:int -> N:'a list list -> 'a list list
+    val zoomImg : I:'a list list -> F:int -> newImg:'a list list -> 'a list list
+    val Zoom :
+      width:int ->
+        height:int ->
+          depth:int ->
+            image:(int * int * int) list list ->
+              factor:int -> (int * int * int) list list
+    val rotate : I:'a list list -> 'a list list
+    val RotateRight90 :
+      width:int ->
+        height:int ->
+          depth:int ->
+            image:(int * int * int) list list -> (int * int * int) list list
+  end
+
